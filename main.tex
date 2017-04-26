@@ -1,0 +1,345 @@
+%\documentclass[12pt,a4paper,final] {article}
+\documentclass[12pt,a4paper,final]{report}
+%\setcounter{tocdepth}{4}
+%\setcounter{secnumdepth}{4}
+
+%\documentclass[book]
+%\pagestyle{headings}
+%--- Packages
+%\usepackage[style=numeric]{biblatex}
+%\usepackage{cite}
+\usepackage[numbers,sort&compress]{natbib}
+%\usepackage[style=numeric-comp]{biblatex}
+%\usepackage[american]{babel}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage {graphicx}
+\usepackage {color}
+\usepackage {amsmath}
+\usepackage {xspace}
+\usepackage {empheq}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage {float}
+\usepackage {longtable}
+\usepackage {titlepic}
+%\usepackage{bm}
+\usepackage[nottoc]{tocbibind}
+%\usepackage[]{tocbibind}
+\usepackage[colorinlistoftodos] {todonotes}
+\usepackage{csquotes}
+\usepackage[pdfauthor={Hidemitsu Asano},%
+pdftitle={H.Asano dissertation},%
+%pagebackref=true,%
+pdftex]{hyperref}
+%\usepackage{hyperref}
+\usepackage[
+  open,
+  openlevel=2,
+  atend,
+  numbered
+] {bookmark}
+%\usepackage {feynmf}
+\usepackage {feynmp-auto}
+\usepackage[titletoc,title]{appendix}
+
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\usepackage[acronym,toc,section=chapter] {glossaries}
+%\usepackage[acronym,toc,section=chapter] {glossaries-accsupp}
+\setglossarypreamble[main]{Nomenclatures used in this dissertation:}
+\setglossarypreamble[acronym]{Acronyms and abbreviations used in this dissertation:}
+\renewcommand* {\glstextformat} [1] {\textcolor{black}{#1}}
+\makeglossaries
+\usepackage[xindy]{imakeidx}
+\makeindex
+
+%\renewcommand {\glossaryname} {LIST OF ABBREVIATIONS}
+\renewcommand {\acronymname} {Acronyms and Abbreviations}
+%\renewcommand {\glossaryname} {Acronyms and Abbreviations}
+\renewcommand {\glossaryname} {Nomenclatures}
+%\providecommand{\appendixname}{Appendix}
+\usepackage[T1]{fontenc}
+
+\newcommand{\tildeint}[1]{\ensuremath{\int \frac{\mathrm{d}^{3} #1}{
+      (2\pi)^{3} 2 \omega_{#1}}}}
+
+
+
+\hypersetup{
+colorlinks=true,       % false:boxed links;true:colored links
+    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+
+%set the default graphics path
+    \graphicspath{
+    %
+    {./},%
+    {./figures/}%
+    {./figures/storyofthiswork/}%
+    {./figures/experiment/}%
+    {./figures/vtx/}%
+    {./figures/analysis/}%
+    {./figures/analysis_dca/}%
+    {./figures/unfold/}%
+    {./figures/appendix/}%
+    {./photonic_sim/}%
+}
+
+%--- Define macros
+\newcommand{\pt}{\mbox{$p_T$}\xspace}
+\newcommand{\npart}{\mbox{$N_{\rm part}$}\xspace}
+
+%Units
+\newcommand{\mev}{\mbox{MeV}\xspace}
+\newcommand{\gev}{\mbox{GeV}\xspace}
+\newcommand{\tev}{\mbox{TeV}\xspace}
+\newcommand{\mevc}{\mbox{MeV/$c~$}\xspace}
+\newcommand{\gevc}{\mbox{GeV/$c~$}\xspace}
+\newcommand{\gevcsq}{\mbox{GeV/$c^{2}~$}\xspace}
+\newcommand{\mum}{\mbox{$\mu$m}\xspace}
+\newcommand{\Ncoll}{\mbox{$N_{\rm coll}$}\xspace}
+\newcommand{\Et}{\mbox{${\rm E}_T$}\xspace}
+\newcommand{\meanpt}{\mbox{$\langle p_T \rangle$}\xspace}
+\newcommand{\meanet}{\mbox{$\langle {\rm E}_T \rangle$}\xspace}
+%Collision Variables
+\newcommand{\sqs}{\mbox{$\sqrt{s}$}\xspace}
+\newcommand{\sqsn}{\mbox{$\sqrt{s_{_{NN}}}$}\xspace}
+\newcommand{\pp}{\mbox{$p$+$p$}\xspace}
+\newcommand{\ppb}{\mbox{$p$+$Pb$}\xspace}
+\newcommand{\ppbar}{\mbox{$p$+$\bar{p}$}\xspace}
+\newcommand{\nn}{\mbox{$NN$}\xspace}
+\newcommand{\auau}{\mbox{Au+Au}\xspace}
+\newcommand{\pal}{\mbox{$p$+Al}\xspace}
+\newcommand{\heau}{\mbox{$^3$He+Au}\xspace}
+
+\newcommand{\uu}{\mbox{U$+$U}\xspace}
+\newcommand{\jpsi}{\mbox{$J/\psi$}\xspace}
+\newcommand{\Etemc}{\mbox{${\rm{E}}_{T\,{\rm EMCal}}$}\xspace}
+\newcommand{\Nqp}{\mbox{$N_{qp}$}\xspace}
+\newcommand{\D}{$D$\xspace}
+\newcommand{\B}{$B$\xspace}
+%Modification factors
+
+
+\newcommand{\ptg}{\mbox{$p_T^{\gamma}$}\xspace}
+\newcommand{\raa}{\mbox{$R_{AA}$}\xspace}
+\newcommand{\rda}{\mbox{$R_{dA}$}\xspace}
+\newcommand{\rcd}{\mbox{$R_{CD}$}\xspace}
+\newcommand{\raap}{\mbox{$R_{AA}^{N_{\rm part}}$}\xspace}
+\newcommand{\Npart}{\mbox{$N_{\rm part}$}\xspace}
+\newcommand{\Nch}{\mbox{$N_{\rm ch}$}\xspace}
+\newcommand{\sqsntwo}{\mbox{$\sqrt{s_{_{NN}}}=200$~GeV}\xspace}
+\newcommand{\dau}{\mbox{$d$$+$Au}\xspace}
+\newcommand{\pdau}{\mbox{$p(d)$$+$Au}\xspace}
+\newcommand{\pau}{\mbox{$p$$+$Au}\xspace}
+\newcommand{\pythia}{\mbox{\sc pythia}\xspace}
+\newcommand{\geant}{\mbox{\sc geant3}\xspace}
+\newcommand{\fonll}{\mbox{\sc fonll}\xspace}
+\newcommand{\pbpb}{\mbox{Pb$+$Pb}\xspace}
+\newcommand{\cucu}{\mbox{Cu$+$Cu}\xspace}
+\newcommand{\cuau}{\mbox{Cu$+$Au}\xspace}
+\newcommand{\DCAT}{\mbox{$\mathrm{DCA}_{T}$}\xspace}
+\newcommand{\DCAL}{\mbox{$\mathrm{DCA}_{L}$}\xspace}
+%\newcommand{\DCAT}{\gls{dcat}\xspace}
+%\newcommand{\DCAL}{\gls{dcal}\xspace}
+\newcommand{\Fnp}{\mbox{$F_{\rm NP}$}\xspace}
+\newcommand{\midy}{\mbox{$|y|<0.35$}\xspace}
+\newcommand{\pte}{\mbox{$p_T^e$}\xspace}
+\newcommand{\ptc}{\mbox{$p_T^c$}\xspace}
+\newcommand{\ptb}{\mbox{$p_T^b$}\xspace}
+\newcommand{\pth}{\mbox{$p_T^h$}\xspace}
+
+\newcommand{\bvec}[1]{\boldsymbol{#1}}
+%% For unfolding appendix
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\xvecd}{\mathbf{x}^{\rm data}}
+\newcommand{\rvec}{\mathbf{R}}
+\newcommand{\thetavec}{\boldsymbol\theta}
+% \newcommand{\prior}{P(\thetavec)}
+\newcommand{\prior}{\pi(\thetavec)}
+% \newcommand{\post}{P(\thetavec|\xvec)}
+\newcommand{\post}{p(\thetavec|\xvec)}
+\newcommand{\like}{P(\xvec|\thetavec)}
+\newcommand{\ilike}{P(\xvec_i|\thetavec)}
+\newcommand{\data}{\{\xvec_i\}_{i=1}^m}
+\newcommand{\eptdata}{\mathbf{Y}^{\rm data}}
+\newcommand{\dcadata}[1]{\mathbf{D}_{#1}^{\rm data}}
+\newcommand{\epttheta}{\mathbf{Y}(\thetavec)}
+\newcommand{\dcatheta}[1]{\mathbf{D}_{#1}(\thetavec)}
+\newcommand{\My}{\mathbf{M}^{\mathbf{(Y)}}}
+\newcommand{\Md}{\mathbf{M}_{j}^{\mathbf{(D)}}}
+%Particles
+
+%theory
+%\newglossaryentry{qgp}{name=QGP, description={Quark Gluon Plasma}}
+\newacronym{qgp}{QGP}{Quark Gluon Plasma}
+\newacronym{bnl}{BNL}{Brookhaven National Laboratory}
+\newacronym{lhc}{LHC}{Large Hadron Collider}
+\newacronym{lhcb}{LHCb}{Large Hadron Collider beauty experiment}
+\newacronym{rhic}{RHIC}{Relativistic Heavy Ion Collider}
+\newacronym{ags}{AGS}{Alternating Gradient Synchrotron}
+\newacronym{sps}{SPS}{Super Proton Synchrotron (CERN)}
+\newacronym{phenix}{PHENIX}{Pioneering High Energy Nuclear Interaction eXperiment (at RHIC)}
+\newacronym{brahms}{BRAHMS}{Broad RAnge Hadron Magnetic Spectrometers (experiment at RHIC)}
+\newacronym{mb}{MB}{Minimum Bias}
+\newacronym{pmt}{PMT}{Photomultiplier Tube (of RICH) }
+\newacronym{cms}{CMS}{Compact Muon Solenoid (experiment at the LHC)}
+\newacronym{alice}{ALICE}{A Large Ion Collider Experiment (at the LHC)}
+\newacronym{star}{STAR}{Solenoidal Tracker at RHIC (experiment)}
+\newacronym{pdf}{PDF}{Parton Distribution Function}
+\newacronym{qcd}{QCD}{Quantum Chromodynamics}
+\newacronym{pqcd}{pQCD}{pertavative Quantum Chromodynamics}
+\newacronym{fonll}{FONLL}{Fixed Order + Next-to-Leading Log}
+%analysis
+\newacronym{dca}{DCA}{Distance of Closest Approach}
+\newacronym{mcmc}{MCMC}{Markov Chain Monte Carlo}
+\newacronym{ndf}{NDF}{Number of Degree of Freedom}
+%detector
+\newacronym{bbc}{BBC}{Beam-Beam Counters (subsystem of PHENIX)}
+\newacronym{dch}{DCH}{Drift Chamber (subsystem of PHENIX)} 
+\newacronym{vtx}{VTX}{Silicon Vertex Tracker (subsystem of PHENIX)}
+\newacronym{rich}{RICH}{Ring Image \v{C}herenkov Detector (subsystem of PHENIX)}
+\newacronym{emcal}{EMCal}{Electromagnetic Calorimeter (subsystem of PHENIX)}
+\newacronym{pc}{PC}{Pad Chamber (subsystem of PHENIX)}
+\newacronym{daq}{DAQ}{Data acquisition}
+
+%nomenclature
+\newglossaryentry{pt}{name=$\boldsymbol\pt$,text = \pt, description={transverse momentum}}
+\newglossaryentry{tc}{name=$\boldsymbol{T_c}$,text = $T_c$, description={psudocritical temperature}}
+\newglossaryentry{eta}{name=$\boldsymbol\eta$, text = $\eta$, description={psudo rapidity}}
+\newglossaryentry{ncoll}{name=$\boldsymbol\Ncoll$,text = \Ncoll, description={Number of binary collisions}}
+\newglossaryentry{npart}{name=$\boldsymbol\Npart$,text = \Npart, description={Number of participants}}
+\newglossaryentry{nn}{name=$\boldsymbol\nn$,text = \nn, description={Nucleon-Nucleon (collision)}}
+\newglossaryentry{fnp}{name=$\boldsymbol\Fnp$,text = \Fnp, description={The fraction of nonphotonic electrons to inclusive electrons}}
+\newglossaryentry{dcat}{name=$\boldsymbol{{\mbox{$\mathrm{DCA}_{T}$}}}$,text = {{\mbox{$\mathrm{DCA}_{T}$}}}, description={DCA in transverse plane}}
+\newglossaryentry{dcal}{name=$\boldsymbol{{\mbox{$\mathrm{DCA}_{L}$}}}$,text = {{\mbox{$\mathrm{DCA}_{L}$}}}, description={DCA along the beam axis}}
+\newcommand{\gDCAT}{\gls{dcat}\xspace}
+\newcommand{\gDCAL}{\gls{dcal}\xspace}
+\newglossaryentry{raa}{name=$\boldsymbol\raa$, text = \raa, description={Nuclear modification factor}}
+\newglossaryentry{sqsn}{name=$\boldsymbol\sqsn$, text = \sqsn, description={Center of energy per nucleon pair}}
+\newglossaryentry{rcd}{name=$\boldsymbol\rcd$, text = \rcd, description={Ratio of conversion electrons to electrons
+from Dalitz decays}}
+
+%for marking up text
+\newcommand{\alnt} [1]{{\color{red} #1}}
+\pagenumbering{roman}
+%\title{Measurement of electron from Charm and Bottom \\with Silicon Vertex Detector in Au+Au collision at \sqsn = 200 \gev}
+%\titlehead{\centering\includegraphics[width=6cm]{KyotoUsymbol}}
+\title{E31 note}
+\author{Hidemitsu Asano}
+\date{\today}
+
+
+\begin{document}
+\begin{titlepage}
+
+%\begin{figure}[h]
+%\end{figure}
+\centering
+%\maketitle
+\LARGE
+\textbf{E31 note}
+
+\Large
+\textbf{Hidemitsu Asano}
+
+\vspace{1.5cm}
+\Large
+
+
+\end{titlepage}
+%\hyperref[title page]{''link text''}
+%\addcontentsline{toc}{section}{Title}
+\clearpage
+\thispagestyle{empty}
+
+\clearpage
+\pagestyle{plain}
+\hypertarget{Table of Contents}{}
+\bookmark[dest=Table of Contents,level=chapter]{Table of Contents}
+%\maketitle
+\tableofcontents
+\clearpage
+\listoffigures 
+\clearpage
+\listoftables
+\clearpage
+%\printglossary[type=main,style=long,nonumberlist]
+
+%\setglossarystyle{index}
+%\glsnogroupskiptrue
+\renewcommand*{\glsgroupskip}{\vspace{-1.0em}}
+
+
+%\printglossary[style=mylong,nonumberlist,type=\acronymtype]
+\vspace{-5.0cm}
+\printglossary[nonumberlist,type=\acronymtype]
+\newpage
+%\glsaddall
+%\printglossary[style=mylong,nonumberlist]
+
+\vspace{-5.0cm}
+\printglossary[nonumberlist]
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{abstract}
+
+
+This dissertation details the measurement of electrons from semileptonic decay of charm and bottom
+hadrons from \auau collisions at $\sqsn = 200 $ GeV by using the PHENIX detector in the relativistic heavy ion collider (RHIC).
+
+Heavy quarks (charm or bottom) are one of suitable probes of a \gls{qgp}.
+Due to their large masses, the production process of heavy quarks is restricted to initial nucleon-nucleon collisions. Thus, heavy quarks carry information about the entire time-evolution of the medium. 
+
+
+We previously measured the yields of electrons from semileptonic decays of charm and bottom hadrons inclusively in \auau collisions at \sqsn = 200 GeV. It indicated substantial modification in the momentum distribution of the parent heavy quarks due to the \acrshort{qgp} created in these collisions.
+However, at that time, PHENIX was not able to distinguish electrons from charm and bottom hadrons independently. In order to understand these medium effects in more detail, the separation of electrons from charm and bottom hadrons are aimed to reveal the mass dependence of energy loss in the medium.
+
+
+%To access the heavy flavor observables more precisely, the Silicon Vertex Tracker (VTX) was installed in the RHIC-PHENIX detector.
+%The VTX was designed to give precise tracking reconstructions of the distance of closest approach (DCA) to the collision vertex in order to distinguish prompt particles from in-flight decays. 
+For the first time, by using the Silicon Vertex Tracker (VTX) installed in PHENIX to measure precision displaced tracking,
+we have succeeded in separating the electrons from charm and bottom hadrons in \auau collisions at \sqsn = 200 GeV 
+in the transverse momentum (\pt) from 1 \gevc to 8 \gevc at midrapidity region ($|\eta|<0.35$). The invariant yield of charm and bottom hadrons as a function of \pt were calculated.
+Based on this separation, the fraction of the electrons from bottom hadrons were obtained. Further, by using that for \pp collision, the nuclear modification factor \raa was extracted both for charm and bottom electrons.
+%We compare the fraction of electrons from bottom hadrons to previously 
+%published results extracted from electron-hadron correlations in $p$$+$$p$ 
+%collisions at $\sqrt{s_{_{NN}}}=200$~GeV and find the fractions to be 
+%similar within the large uncertainties on both measurements for 
+%$p_T>4$~GeV/$c$. 
+%We use the bottom electron fractions in \auau and 
+%\pp along with the previously measured heavy flavor electron 
+%$R_{AA}$ to calculate the $R_{AA}$ for electrons from charm and bottom 
+%hadron decays separately.% We find that electrons from bottom hadron decays 
+%are less suppressed than those from charm for the region $3<p_T<4$~GeV/$c$.
+
+We have observed that bottom electron is suppressed for higher \pt region (\pt > 4 \gevc) in \auau collisions compared to \pp collisions for the first time in RHIC energy.  %The electrons from bottom hadron decays are less suppressed than those from charm for the region $3 < \pt < 4 \gevc$.
+While the magnitude of suppression is smaller than that of charm in the region of $3 < \pt < 4 ~\gevc$, it is similar for higher \pt region within systematic uncertainty.
+
+\end{abstract}
+%glossaries
+\clearpage
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyhead[C]{\leftmark}
+\lhead{Section \leftmark} 
+%\rhead{\thepage}
+\cfoot{\thepage}
+\clearpage
+\begin{appendices}
+\end{appendices}
+%\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
+%\nocite{*}
+\bibliography{main.bib}
+
+
+\end{document}
