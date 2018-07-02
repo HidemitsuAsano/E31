@@ -1,0 +1,45 @@
+\section{ $d(K^-,\Lambda(1405))X $ invariant mass and momentum dependence analysis}
+\subsection{overview}
+The purpose of this analysis is to measure momentum dependence of cross section of the $\Lambda (1405)$, which can be discuss the form factor of the $\Lambda (1405)$. 
+This analysis is inspired by J-PARC E15-1st analysis \cite{Sada:2016nkb}.
+
+
+In this analysis invariant mass of the $\Lambda (1405)$ is reconstructed by detecting two charged pions and a neutron by CDS, namely:
+
+\begin{eqnarray}
+\Lambda (1405) & \rightarrow & \Sigma^+\pi^-  \rightarrow {\pi^-\pi^+}n \quad (16.1\%)  \nonumber \\
+               & \rightarrow & \Sigma^-\pi^+  \rightarrow {\pi^+\pi^-}n \quad (33.3\%)
+\end{eqnarray}
+Number in parenthesis shows a branching ratio.
+
+In this analysis,
+$d(K^-,\Lambda (1405) )$X reaction is used and forward neutron is not required. This is because we want to measure momentum dependence of the cross section of $\Lambda (1405)$
+
+%\begin{equation} \label{pole} 
+%  \frac{d^2 \sigma _X}{dM_{inv.\Lambda (1405)}dq_{\Lambda p}} \propto \rho _{3}(\Lambda p n) \times     \frac{(\Gamma _X/2)^2}{(M_{inv.\Lambda p}-M_{X})^2 + (\Gamma _{X} /2)^2 } \times  | \exp{(-q_{    \Lambda p}^2/2Q_{X}^2)}|^2 ,
+%\end{equation} 
+
+\todo[inline,color=green]{need to take into account spin parity? -> perhaps, no. They are just averated out}
+\begin{equation} \label{formfactor} 
+ % \frac{d^2 \sigma _X}{dM_{\Sigma \pi} dq_{\Sigma \pi}} \propto \rho _{3}(\Sigma \pi n) \times     \frac{(\Gamma _X/2)^2}{(M_{\Sigma \pi}-M_{X})^2 + (\Gamma _{X} /2)^2 } \times  | \exp{(-q_{    \Sigma \pi}^2/2Q_{X}^2)}|^2 ,
+  \frac{d^2 \sigma _X}{dM_{\Sigma \pi} dq} \propto \rho _{3}(\Sigma \pi n) \times     \frac{(\Gamma _{\Sigma \pi} /2)^2}{(M - M_{\Sigma \pi})^2 + (\Gamma _{\Sigma \pi} /2)^2 } \times  | \exp{(-q^2/2Q_{X}^2)}|^2 ,
+\end{equation} 
+where $M_{inv.\Sigma \pi}$ is the invariant mass of $\Sigma \pi$, $q_{\Sigma \pi}$ is defined as $ q_{\Sigma \pi} \equiv |p_\Sigma|  + |p_\pi| $ ,which is the momentum transfer of the reaction. $\rho_{3}(\Sigma \pi n) $ is the three body phase space. $\Gamma_X$ is the decay-width of Breit-Wigner peak. $Q_X$ is a free parameter which can be interpreted as the form factor parameter of the pole.  
+If the $Q_X \to \infty $, the formula above becomes point-like interaction.
+
+
+
+\subsection{neutron identification by the CDS}
+\todo[inline]{under construction, need to understand Sakuma's method }
+\begin{itemize}
+\item at least one CDH segment is fired
+\item no CDC hits in the solid angle of the CDH segments above
+
+\end{itemize}
+\subsubsection{missing neutron analysis}
+
+\subsubsection{$K_0$ and $\Lambda$ subtraction}
+
+
+\subsection{d$(K^-,\Lambda)$ analysis}
+\todo[inline]{ To discuss the form factor, a hadron whose size is known (or must be small by quark model) should be meausured by the similar method ?}
