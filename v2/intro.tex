@@ -1,0 +1,44 @@
+\section{Introduction}
+The main goal of this analysis is to measure momentum transfer dependence of the cross section of the $\Lambda (1405)$ via the $(K^-,n)$ reaction on deuteron target.
+The momentum transfer dependence can be related to the size of the resonance.
+This analysis is inspired by J-PARC E15 analysis \cite{Sada:2016nkb,Ajimura:2018iyx}.
+
+In this analysis, invariant mass of the $\Lambda (1405)$ is reconstructed by detecting $\pi^{+},\pi^-$ and the neutron by the CDS, namely:
+
+\begin{eqnarray}
+\Lambda (1405) & \rightarrow & \Sigma^+\pi^-  \rightarrow {\pi^-\pi^+}n \quad (16.1\%)  \nonumber \\
+               & \rightarrow & \Sigma^-\pi^+  \rightarrow {\pi^+\pi^-}n \quad (33.3\%)
+\end{eqnarray}
+Number in parenthesis shows a branching ratio.
+Here, the forward neutron is identified from the missing mass of 
+$d(K^-,\pi^+\pi^-n)$X reaction. In this way, we can widely measure the momentum transfer of the \reaction reaction. 
+The momentum transfer ($q$) is defined by, $q=|\overrightarrow{K_{\mbox{beam}}} - \overrightarrow{n_{\mbox{miss}}}|$.
+
+%\begin{equation} \label{pole} 
+%  \frac{d^2 \sigma _X}{dM_{inv.\Lambda (1405)}dq_{\Lambda p}} \propto \rho _{3}(\Lambda p n) \times     \frac{(\Gamma _X/2)^2}{(M_{inv.\Lambda p}-M_{X})^2 + (\Gamma _{X} /2)^2 } \times  | \exp{(-q_{    \Lambda p}^2/2Q_{X}^2)}|^2 ,
+%\end{equation} 
+
+%\todo[inline,color=green]{need to take into account spin parity? -> perhaps, no. They are just averaged out}
+\begin{equation} \label{formfactor} 
+ % \frac{d^2 \sigma _X}{dM_{\Sigma \pi} dq_{\Sigma \pi}} \propto \rho _{3}(\Sigma \pi n) \times     \frac{(\Gamma _X/2)^2}{(M_{\Sigma \pi}-M_{X})^2 + (\Gamma _{X} /2)^2 } \times  | \exp{(-q_{    \Sigma \pi}^2/2Q_{X}^2)}|^2 ,
+  \frac{d^2 \sigma _X}{dM_{\Sigma \pi} dq} \propto \rho _{3}(\Sigma \pi n) \times \frac{(\Gamma _{\Sigma \pi} /2)^2}{(M - M_{\Sigma \pi})^2 + (\Gamma _{\Sigma \pi} /2)^2 } \times  | \exp{(-q^2/2Q_{X}^2)}|^2 ,
+\end{equation} 
+where $M_{\Sigma \pi}$ is the invariant mass of $\Sigma \pi$ and $q_{\Sigma \pi}$ is defined as $ q_{\Sigma \pi} \equiv |p_\Sigma| + |p_\pi| $ , which is the momentum transfer of the reaction. $\rho_{3}(\Sigma \pi n) $ is the three body phase space. $\Gamma_X$ is the decay-width of Breit-Wigner peak. $Q_X$ is a free parameter which can be interpreted as the form factor parameter of the pole.  
+If the $Q_X \to \infty $, the formula above becomes point-like interaction.
+
+\begin{table}[]
+  \centering  
+  \renewcommand\arraystretch{2}
+  \caption{resonaces expected in the $\pi^\pm\Sigma^\mp$ spectra}
+  \begin{tabular}{ccccc} \hline
+  resonace & mass & $I(J^p)$ & $\bar{K}N$ scattering & B.R.\\ \hline\hline
+  $\Lambda(1405)$  &  ?     & 0($\frac{1}{2}^-)$  & S-wave & 100\% \\ \hline
+  $\Sigma(1385)^0$   & $1383.7 \pm 1.0$ MeV & $1(\frac{3}{2}^+)$ & P-wave & 11.7 $\pm$ 1.5\% \\ \hline
+  $\Lambda(1520)$  & $1519.5 \pm 1.0$ MeV & $0(\frac{3}{2}^-)$ & D-wave & 42 $\pm$ 1\% \\ \hline
+  \end{tabular}
+\end{table}
+
+
+\subsection{Review of $\Lambda (1405)$ physics}
+
+
