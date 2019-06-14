@@ -1,0 +1,104 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{ebgaramond}
+%\usepackage{kpfonts}
+%% Sets page size and margins
+\usepackage[a4paper]{geometry}
+
+%% Useful packages
+\usepackage{ascmac}
+\newdimen\tbaselineshift
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage[titletoc,title]{appendix}
+
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\addto{\captionsenglish}{\renewcommand{\abstractname}{Preface}}
+%\newcommand{\lam}{\mbox{\Lambda (1405)}\xspace}
+
+\newcommand{\pS}{\mbox{$\pi^{\pm}\Sigma^{\mp}$}\xspace}
+\newcommand{\reaction}{\mbox{$\Lambda(1405)\rightarrow \pi^{\pm}\Sigma^{\mp}$}\xspace}
+
+\hypersetup{
+  colorlinks=true,       % false:boxed links;true:colored links
+    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+
+\graphicspath{
+  %
+  {./},%
+  {./fig/}%
+}
+
+
+
+%\newcommand{\updateinfo}[1][\today]{\par\vfill\hfill{\scriptsize\color{gray}Last updated on #1}}
+\newcommand{\updateinfo}[1][\today]{{\par{\color{gray}Last updated on #1}}}
+\pagenumbering{roman}
+
+\title{Momentum transfer dependence of the cross section of the $\Lambda(1405)$ in E31-2nd }
+\author{Hidemitsu Asano}
+\date{}
+
+\makeindex
+
+\begin{document}
+\maketitle
+\vspace{4em}
+\begin{abstract}
+\noindent This note details the analysis of the $\Lambda(1405)\rightarrow \pS $ invariant mass spectra produced in the $d(K^-,\Lambda(1405))n$ reaction in E31-2nd. The main goal of this analysis is to measure the cross section of the $\Lambda(1405)$ vs the momentum transfer of the reaction.
+\end{abstract}
+\tableofcontents
+
+\clearpage
+\listoffigures
+
+\clearpage
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
+
+\input{intro}
+
+
+\section{Experimental setup}
+\input{detector}
+\input{trigger}
+
+
+
+
+\input{sim}
+
+
+\input{ana}
+
+
+
+
+
+\input{discussion}
+
+
+\begin{appendices}
+\input{goodrun}
+
+\end{appendices}
+
+
+\bibliographystyle{unsrt}
+\bibliography{main.bib}
+
+\end{document}
