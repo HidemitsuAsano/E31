@@ -3,6 +3,7 @@
 
 
 \subsection{Event Selection}
+The following event selection by the CDS is made prior to the beam line analysis to reduce CPU time.
 \begin{itemize}
 \item \# of CDH segments fired == 3
 \item \# of good CDC tracks == 2
@@ -10,16 +11,22 @@
 \end{itemize}
 Here, clustering of CDH hits are not being made.
 
+\subsection{CDH analysis}
+
+
+
+
 
 \subsection{Beam Analysis}
 \subsubsection{Analysis Cuts}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{fig/hist2.pdf}
+\caption{Hit multiplicity of BHD}
 \end{figure}
 \begin{figure}
 \includegraphics[width=\linewidth]{fig/hist3.pdf}
-\caption{Phase Space distribution of $\Sigma^+$ mode (left) and $\Sigma^-$ mode (right).}
+\caption{Hit multiplicity of T0}
 \end{figure}
 
 
@@ -153,7 +160,24 @@ Here, clustering of CDH hits are not being made.
 
 \subsection{Acceptance and Efficiency}
 The total acceptance as a function of momentum transfer of the reaction (q) and invariant mass of ($n\pi^+\pi^-$) (IM), $\epsilon_{acc}(\mbox{q,IM})$ is evaluated by GEANT4 simulation.
-The simulated data is generated uniformly in (q,IM) space as shown in fig. 
+The $n\Sigma^{\pm}\pi^{\mp}$ 3-body simulated data is generated on deuteron target with the incident beam of 1 GeV/c.
+The simulated data is generated almost uniformly in (q,IM) space as shown in fig.\ref{fig:genSpSm}. 
+Because by using phase space distribution, I can not get enough statistic in low mass region, I generated probability distribution from phase space simulation and put a filter in the event generator. 
+Fig.\ref{fig:probSpSm} shows the probability distribution applied for GEANT4 event generator.
+
+\begin{figure}
+\includegraphics[width=0.45\linewidth]{simaccSp1.pdf}
+\includegraphics[width=0.45\linewidth]{simaccSm1.pdf}\label{fig:genSpSm}
+\caption{generated events distribution of $\Sigma^+$ mode (left) and $\Sigma^-$ mode (right).}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.45\linewidth]{probSp.pdf}
+\includegraphics[width=0.45\linewidth]{probSm.pdf}\label{fig:probSpSm}
+\caption{probability distribution used for the GEANT4 event generator.}
+\end{figure}
+
+
 
 The total acceptance is evaluated as follows,
 \[
